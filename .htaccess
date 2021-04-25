@@ -1,0 +1,7 @@
+#Force www:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^devopsconsultant.in [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ http://www.devopsconsultant.in/$1 [L,R=301,NC]
